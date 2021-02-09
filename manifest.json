@@ -1,7 +1,7 @@
 {
   "name": "GTM Blocker",
   "version": "0.0.1",
-  "description": "Block GTM from being triggered on Twine.net",
+  "description": "Prevent yourself from triggering Google Tag Manager on your own website.",
   "permissions": ["activeTab", "declarativeContent", "storage", "webNavigation"],
   "background": {
     "scripts": ["./backgroundScripts/background.js"],

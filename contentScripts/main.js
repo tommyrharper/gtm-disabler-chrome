@@ -29,7 +29,6 @@ function updateDoc() {
 
 chrome.runtime.onMessage.addListener(
   function(request, sender, sendResponse) {
-    console.log('message from background: ', request);
     const gtmMeta = document.querySelector('meta[name="GTM-Blocker"]');
     if (request.enabled) {
       if (gtmMeta) gtmMeta.setAttribute("content", 'enabled');
@@ -44,7 +43,6 @@ chrome.runtime.onMessage.addListener(
 chrome.runtime.sendMessage(
   { message: 'Hi from main.js' },
   function (response) {
-    console.log(response);
     if (response.enabled) updateDoc();
   }
 );

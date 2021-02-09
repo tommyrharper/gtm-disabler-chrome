@@ -20,31 +20,16 @@ chrome.extension.onConnect.addListener(function (port) {
 
     });
   } 
-  // else if (port.name === 'content-channel') {
-  //   port.onMessage.addListener(function(msg) {
-  //     console.log("message received from main.js: " + msg);
-
-  //     if (msg.joke == "Knock knock")
-  //       port.postMessage({question: "Who's there?"});
-  //     else if (msg.answer == "Madame")
-  //       port.postMessage({question: "Madame who?"});
-  //     else if (msg.answer == "Madame... Bovary")
-  //       port.postMessage({question: "I don't get it."});
-  //   });
-  // }
 });
 
+chrome.runtime.onInstalled.addListener(function () {});
 
-// chrome.runtime.onConnect.addListener(function(port) {
-//   console.assert(port.name == "knockknock");
-//   console.log('port', port);
-//   port.onMessage.addListener(function(msg) {
-//     console.log('inside background listener: ', msg);
-//     if (msg.joke == "Knock knock")
-//       port.postMessage({question: "Who's there?"});
-//     else if (msg.answer == "Madame")
-//       port.postMessage({question: "Madame who?"});
-//     else if (msg.answer == "Madame... Bovary")
-//       port.postMessage({question: "I don't get it."});
-//   });
-// });
+chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
+  console.log("Message from (content_script) main.js to (background_script) background.js: ", request);
+
+  if (request.message) {
+    sendResponse({ enabled: enabled });
+  } else {
+    sendResponse({ messageFromBackgroundScript: "failure!" });
+  }
+});

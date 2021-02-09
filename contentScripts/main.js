@@ -1,4 +1,4 @@
-function updateDoc() {
+function injectGTMBlocker() {
   const observer = new MutationObserver(onMutation);
 
   observer.observe(document, {
@@ -43,6 +43,6 @@ chrome.runtime.onMessage.addListener(
 chrome.runtime.sendMessage(
   { message: 'Hi from main.js' },
   function (response) {
-    if (response.enabled) updateDoc();
+    if (response.enabled) injectGTMBlocker();
   }
 );

@@ -2,7 +2,7 @@ const toggle = document.getElementById('toggle');
 const slider = document.getElementById('slider');
 
 let port = chrome.extension.connect({
-  name: "Sample Communication",
+  name: "popup-channel",
 });
 port.postMessage("Hi BackGround from popup.js");
 port.onMessage.addListener(function (msg) {

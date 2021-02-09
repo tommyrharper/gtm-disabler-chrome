@@ -24,3 +24,16 @@ function onMutation(mutations) {
     }
   }
 }
+
+chrome.runtime.onMessage.addListener(
+  function(request, sender, sendResponse) {
+    console.log('message from background: ', request);
+    const gtmMeta = document.querySelector('meta[name="GTM-Blocker"]');
+    if (request.enabled) {
+      if (gtmMeta) gtmMeta.setAttribute("content", 'enabled');
+    } else if (!request.enabled) {
+      if (gtmMeta) gtmMeta.setAttribute("content", 'disabled');
+    }
+    sendResponse({enabled: request.enable});
+  }
+);

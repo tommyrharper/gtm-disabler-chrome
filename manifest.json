@@ -3,6 +3,10 @@
   "version": "1.0",
   "description": "Block GTM from being triggered on Twine.net",
   "permissions": ["activeTab", "declarativeContent", "storage"],
+  "background": {
+    "scripts": ["./backgroundScripts/background.js"],
+    "persistent": false
+  },
   "content_scripts": [
     {
       "matches": ["<all_urls>"],

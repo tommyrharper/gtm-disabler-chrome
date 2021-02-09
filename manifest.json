@@ -1,6 +1,6 @@
 {
   "name": "GTM Blocker",
-  "version": "1.0",
+  "version": "0.0.1",
   "description": "Block GTM from being triggered on Twine.net",
   "permissions": ["activeTab", "declarativeContent", "storage", "webNavigation"],
   "background": {

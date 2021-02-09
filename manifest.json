@@ -10,5 +10,13 @@
       "run_at": "document_start"
     }
   ],
+  "browser_action": {
+    "default_icon": {
+      "64": "images/GTM-Blocker.png"
+    }
+  },
+  "icons": {
+    "64": "images/GTM-Blocker.png"
+  },
   "manifest_version": 2
 }

@@ -2,7 +2,6 @@
   "name": "Google Tag Manager Blocker",
   "version": "0.0.1",
   "description": "Prevent yourself from triggering Google Tag Manager on your own website.",
-  "permissions": ["activeTab", "declarativeContent", "storage", "webNavigation"],
   "background": {
     "scripts": ["./backgroundScripts/background.js"],
     "persistent": false

@@ -1,4 +1,5 @@
 const toggle = document.getElementById('toggle');
+const slider = document.getElementById('slider');
 
 let port = chrome.extension.connect({
   name: "Sample Communication",
@@ -11,4 +12,5 @@ port.onMessage.addListener(function (msg) {
 
 toggle.addEventListener('click', () => {
   port.postMessage(toggle.checked);
+  slider.className += " animateSlider";
 })

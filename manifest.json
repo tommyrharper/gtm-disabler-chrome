@@ -22,5 +22,8 @@
   "icons": {
     "64": "images/GTM-Blocker.png"
   },
+  "permissions": [
+    "tabs"
+  ],
   "manifest_version": 2
 }

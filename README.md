@@ -30,7 +30,10 @@ You can see how this would look here:
 
 ## Step 2: Adding the JavaScript
 
-Now wherever you connect to GTM in your codebase, simply add the following conditional code. It will check whether google tag manager is enabled, and hence decide whether to connect depending on whether you have GTM-Blocker running on chrome.
+Now wherever you connect to GTM in your codebase, simply add the following conditional logic. It will check whether GTM-Blocker is enabled, and hence determine whether to connect to Google Tag Manager.
+
+- When you switch on GTM-Blocker, it will not connect to Google Tag Manager.
+- By default, or when you switch off GTM-Blocker, it will connect to Google Tag Manager.
 
 ```JavaScript
 const GTMBlocker = document.querySelector('meta[name="GTM-Blocker"]');
